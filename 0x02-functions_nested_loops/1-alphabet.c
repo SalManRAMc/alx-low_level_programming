@@ -9,7 +9,7 @@ void print_alphabet(void)
 {
 	int loweralpha;
 
-	for (loweralpha = 'a';loweralpha <= 122; loweralpha++)
+	for (loweralpha = 'a'; loweralpha <= 122; loweralpha++)
 		_putchar(loweralpha);
-	_putchar('\n'); 
+	_putchar('\n');
 }
