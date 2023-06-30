@@ -1,17 +1,15 @@
 #include "main.h"
 
 /**
- *
- * Description: Prints alphabet followed by a new line
- *
- * Return: Always 0 (Success)
+ * print_alphabet - utilizes on the _putchar function to print
+ *                 the alphabet a - z
 */
+
 void print_alphabet(void)
 {
 	int loweralpha;
-	loweralpha = 'a';
 
-	for (;loweralpha <= 122; loweralpha++)
+	for (loweralpha = 'a';loweralpha <= 122; loweralpha++)
 		_putchar(loweralpha);
 	_putchar('\n');
 }
