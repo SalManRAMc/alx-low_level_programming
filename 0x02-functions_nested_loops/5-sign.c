@@ -2,12 +2,11 @@
 #include "main.h"
 
 /**
-* parent_sign- determine sign of number
+* parent_sign - determine sign of number
 *
 * @n: operand to be determined and assigned a sign
 *
-* Return: 1 if n is +ve, -1 if n is negative, zero if n is 0 
-*
+* Return: 1 if n is +ve, -1 if n is negative, zero if n is 0
 */
 
 int print_sign(int n)
