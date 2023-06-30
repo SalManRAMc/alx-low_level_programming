@@ -5,7 +5,7 @@
 *
 * @n: takes in integer type input for function
 *
-* Return: unsigned int (Success) 
+* Return: unsigned int (Success)
 */
 
 int _abs(int n)
