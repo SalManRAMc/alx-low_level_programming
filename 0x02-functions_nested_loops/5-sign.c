@@ -5,6 +5,7 @@
 * parent_sign - determine sign of number
 *
 * @n: operand to be determined and assigned a sign
+* Description: Function prints a sign equivalent and returns signed integer depending on integer sign
 *
 * Return: 1 if n is +ve, -1 if n is negative, zero if n is 0
 */
