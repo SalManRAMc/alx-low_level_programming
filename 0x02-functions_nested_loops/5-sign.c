@@ -2,10 +2,11 @@
 #include "main.h"
 
 /**
-* parent_sign - determine sign of number
+* parent_sign - print + if n is greater than 0,
+* 		0 if n is 0 and - if n is less 
+* 		than 0
 *
 * @n: operand to be determined and assigned a sign
-* Description: Function prints a sign equivalent and returns signed integer
 *
 * Return: 1 if n is +ve, -1 if n is negative, zero if n is 0
 */
