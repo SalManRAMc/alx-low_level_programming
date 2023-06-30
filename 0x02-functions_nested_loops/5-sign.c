@@ -2,9 +2,8 @@
 #include "main.h"
 
 /**
-* parent_sign - print + if n is greater than 0,
-* 		0 if n is 0 and - if n is less 
-* 		than 0
+* print_sign - print + if n is greater than 0,
+* 0 if n is 0 and - if n is less than 0
 *
 * @n: operand to be determined and assigned a sign
 *
