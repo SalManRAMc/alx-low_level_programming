@@ -2,6 +2,7 @@
 
 /**
  * _puts_recursion_index - prints string starting from index 0
+ *
  * _puts_recursion - wrapper function
  *
  * @s: string to be printed
