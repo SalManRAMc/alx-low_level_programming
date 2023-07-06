@@ -8,7 +8,7 @@
 
 void _puts_recursion_index(char *s, int i)
 {
-	while (s[i] != '\0')
+	if (s[i] != '\0')
 	{
 		_putchar(s[i]);
 		_puts_recursion_index(s, i+1);
