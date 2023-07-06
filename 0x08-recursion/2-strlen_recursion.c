@@ -3,6 +3,7 @@
 /**
  * _strlen_recursion - returns string length
  * @s: string
+ * @i: number of chars, string length indicator
  * Return: length of string
 */
 
@@ -17,4 +18,5 @@ int _strlen_recursion(char *s)
 		i ++;
 		return (i);
 	}
+	return (i);
 }
