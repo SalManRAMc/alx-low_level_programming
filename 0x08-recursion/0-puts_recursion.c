@@ -18,6 +18,7 @@ void _puts_recursion_index(char *s, int i)
 
 /**
  * _puts_recursion - wrapper function
+ * @s: string to be printed
 */
 
 void _puts_recursion(char *s)
