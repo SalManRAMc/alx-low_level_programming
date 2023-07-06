@@ -13,7 +13,6 @@ void _puts_recursion_index(char *s, int i)
 		_putchar(s[i]);
 		_puts_recursion_index(s, i+1);
 	}
-	_putchar('\n');
 }
 
 void _puts_recursion(char *s)
@@ -22,4 +21,5 @@ void _puts_recursion(char *s)
 	i = 0;
 
 	_puts_recursion_index(s, i);
+	_putchar('\n');
 }
