@@ -17,8 +17,8 @@ int factorial(int n)
 		product = n * factorial(n - 1);
 		return (product);
 	}
-	else if (n < 0)
-		return (-1);
-	else
-	       return (1);	
+	if (n < 0)
+		return -1;
+	if (n == 0)
+		return 1;
 }
