@@ -27,7 +27,7 @@ char *create_array(unsigned int size, char c)
 		printf("Unsuccessful memory allocation");
 		return (NULL);
 	}
-	while (i < size - 1)
+	while (i < size)
 	{
 		array[i] = c;
 		i++;
