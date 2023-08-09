@@ -14,17 +14,15 @@
 
 char *_strdup(char *str)
 {
-	int i = 0, n;
+	int i = 0, n = strlen(str);
         char *copiedarray;
-
-	n = strlen(str);
 
 	if (str == NULL)
 	{
 		printf("input string is empty");
 		return (NULL);
 	}
-	copiedarray = malloc(sizeof(char) * n);
+	copiedarray = malloc((sizeof(char) * n) + 1); //+1 for endofsring char
 	if (copiedarray == NULL)
 	{
 		printf("Memory Allocation Email");
