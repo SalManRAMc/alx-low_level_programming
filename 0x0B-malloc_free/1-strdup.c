@@ -19,7 +19,7 @@ char *_strdup(char *str)
 
 	n = strlen(str);
 
-	if (*str == NULL)
+	if (str == NULL)
 	{
 		printf("input string is empty");
 		return (NULL);
@@ -35,7 +35,5 @@ char *_strdup(char *str)
 		copiedarray[i] = str[i];
 		i++;
 	}
-	i++;
-	copiedarray[i] = str[i];
 	return (copiedarray);
 }
