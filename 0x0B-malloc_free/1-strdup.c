@@ -16,7 +16,7 @@ char *_strdup(char *str)
 {
 	int i = 0, n;
         char *copiedarray;
-       
+
 	n = strlen(str);
 
 	if (str == NULL)
@@ -33,6 +33,9 @@ char *_strdup(char *str)
 	while (str[i] != '\0')
 	{
 		copiedarray[i] = str[i];
+		i++;
 	}
+	i++;
+	copiedarray[i] = str[i];
 	return (copiedarray);
 }
