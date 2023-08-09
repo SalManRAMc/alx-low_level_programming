@@ -22,7 +22,8 @@ char *_strdup(char *str)
 		printf("input string is empty");
 		return (NULL);
 	}
-	copiedarray = malloc((sizeof(char) * n) + 1); //+1 for endofsring char
+	copiedarray = malloc((sizeof(char) * n) + 1); 
+	/* +1 for endofsring char */
 	if (copiedarray == NULL)
 	{
 		printf("Memory Allocation Email");
