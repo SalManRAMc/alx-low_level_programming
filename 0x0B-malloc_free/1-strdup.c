@@ -14,14 +14,13 @@
 
 char *_strdup(char *str)
 {
+	char *copiedarray;
 	int i = 0, n;
-        char *copiedarray;
 
-       	if (str == NULL)
-        {
-                printf("input string is empty");
-                return (NULL);
-        }
+	if (str == NULL)
+	{
+		return (NULL);
+	}
 	n = strlen(str);
 
 	copiedarray = malloc((sizeof(char) * n) + 1);
