@@ -17,7 +17,7 @@ char *_strdup(char *str)
 	int i = 0, n = strlen(str);
 	char *copiedarray;
 
-	if (str == NULL)
+	if (!str)
 	{
 		printf("input string is empty");
 		return (NULL);
@@ -26,7 +26,7 @@ char *_strdup(char *str)
 	copiedarray = malloc((sizeof(char) * n) + 1);
 	/* +1 for endofsring char */
 
-	if (copiedarray == 0)
+	if (copiedarray == NULL)
 	{
 		printf("Memory Allocation Email");
 		return (NULL);
