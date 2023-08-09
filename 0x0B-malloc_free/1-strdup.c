@@ -17,22 +17,27 @@ char *_strdup(char *str)
 	int i = 0, n = strlen(str);
 	char *copiedarray;
 
-	if (str == 0)
+	if (str == NULL)
 	{
 		printf("input string is empty");
 		return (NULL);
 	}
+
 	copiedarray = malloc((sizeof(char) * n) + 1);
 	/* +1 for endofsring char */
-	if (copiedarray == NULL)
+
+	if (copiedarray == 0)
 	{
 		printf("Memory Allocation Email");
 		return (NULL);
 	}
-	while (str[i] != '\0')
+	else
 	{
-		copiedarray[i] = str[i];
-		i++;
+		while (str[i] != '\0')
+		{
+			copiedarray[i] = str[i];
+			i++;
+		}
 	}
 	return (copiedarray);
 }
