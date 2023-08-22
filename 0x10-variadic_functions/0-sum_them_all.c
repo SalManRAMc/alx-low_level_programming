@@ -1,6 +1,6 @@
 #include "variadic_functions.h"
 
-/*
+/**
  * sum_them_all - adds up all the given arguments
  *
  * @n: number of integers to be added
