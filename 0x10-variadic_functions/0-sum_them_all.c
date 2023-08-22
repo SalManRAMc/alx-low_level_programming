@@ -14,10 +14,10 @@ int sum_them_all(const unsigned int n, ...)
 	int counter = n, sum = 0;
 	va_list numbers;
 
-	if(!n)
+	if (!n)
 		return (0);
 	va_start(numbers, n);
-	while(counter--)
+	while (counter--)
 	{
 		sum += va_arg(numbers, int)
 	}
