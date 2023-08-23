@@ -19,11 +19,12 @@ void print_numbers(const char *separator, const unsigned int n, ...)
 		printf("\n");
 		return;
 	}
-
 	va_start(printable_numbers, n);
+
 	while (counter--)
 	{
-			printf("%d%s", va_arg(printable_numbers, int), counter ? (separator ? separator : "") : "\n");
+		printf("%d%s", va_arg(printable_numbers, int),
+					counter ? (separator ? separator : "") : "\n");
 	}
 	va_end(printable_numbers);
 }
