@@ -11,7 +11,8 @@
 
 void print_strings(const char *separator, const unsigned int n, ...)
 {
-	int n = counter;
+	int counter = n;
+	char *str;
 	va_list strings;
 
 	if (!n)
@@ -19,7 +20,7 @@ void print_strings(const char *separator, const unsigned int n, ...)
 		printf("\n");
 		return;
 	}
-	va_start(strings, counter);
+	va_start(strings, n);
 	while (counter--)
 	{
 		printf("%s%s", (str = va_arg(strings, char *)) ? str : "(nil)",
