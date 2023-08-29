@@ -1,42 +1,47 @@
 #include "main.h"
 #include <stdio.h>
-#include <stdlib.h>
 
 /**
- * *string_nconcat - concatenates two strings
+ * string_nconcat - concatenates two strings
+ * @s1: pointer to first string.
+ * @s2: pointer to 2nd string.
+ * @n: Number of bytes from n2 to concatenate.
  *
- * @s1: string 1
- * @s2: string 2
- * @n: number of characters of string
- *
- * Return: returns pointer to string
+ * Return:Pointer to space in memory containing concatenated string.
  */
-
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
-	char *newarray;
-	unsigned int counter1, counter2, len2 = _strlen(s2);
+	char *str;
+	unsigned int i, j, s1_length, s2_length;
 
+	/*Check if the strings passed are null*/
 	if (s1 == NULL)
 		s1 = "";
 	if (s2 == NULL)
 		s2 = "";
-	if (n >= len2)
-		n = len2;
+	/*Compute the length of the strings*/
 
-	newarray = malloc(sizeof(char) * _strlen(s1) + 1 + n);
-	if (newarray == NULL)
+	for (s1_length = 0; s1[s1_length] != '\0'; s1_length++)
+		;
+
+	for (s2_length = 0; s2[s2_length] != '\0'; s2_length++)
+		;
+	/*Memory reservation-for case 1 & 2.*/
+	str = malloc(s1_length + n + 1);
+	if (str == NULL)
+	{
 		return (NULL);
-
-	for (counter1 = 0; *s1 != '\0'; counter1++)
+	}
+	/*Copy first string into str.*/
+	for (i = 0; s1[i] != '\0'; i++)
+		str[i] = s1[i];
+	/*copy second stringg into str.*/
+	for (j = 0; j < n; j++)
 	{
-		newarray[counter1] = *s1++;
+		str[i] = s2[j];
+		i++;
 	}
 
-	for (counter2 = 0; counter2 <= n; counter2++)
-	{
-		newarray[counter1 + counter2] = *s2++;
-	}
-	newarray[counter1 + counter2] = '\0';
-	return (newarray);
+	str[i] = '\0';
+	return (str);
 }
