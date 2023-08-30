@@ -1,28 +1,28 @@
 #include "main.h"
 
 /**
- * r_square - determines whether number has square or not
- *
- * @start: starting number 
- * @requested_number: number whose square is being determined
- *
- * Return: square root
- */
+* r_square - determines whether number has square or not
+*
+* @start: starting number 
+* @requested_number: number whose square is being determined
+*
+* Return: square root
+*/
 
 int r_square(int start, int requested_number)
 {
   int x = start * start, number;
 
-  if (x < requested_number)
-    {
-      number = r_square(start + 1, requested_number);
-      return (number);
-    }
-  else if (x == requested_number)
+ if (x < requested_number)
+   {
+     number = r_square(start + 1, requested_number);
+     return (number);
+   }
+ else if (x == requested_number)
     {
       return (start);
     }
-  else
+ else
     return (-1);
 }
 
@@ -37,6 +37,7 @@ int r_square(int start, int requested_number)
 int _sqrt_recursion(int n)
 {
   int x;
+  
   x = r_square(1, n);
   return (x);
 }
