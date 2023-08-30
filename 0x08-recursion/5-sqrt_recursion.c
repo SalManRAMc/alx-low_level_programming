@@ -11,12 +11,12 @@
 
 int r_square(int start, int requested_number)
 {
-  int x = start * start;
+  int x = start * start, number;
 
   if (x < requested_number)
     {
-      r_square(start + 1, requested_number);
-      return (start);
+      number = r_square(start + 1, requested_number);
+      return (number);
     }
   else if (x == requested_number)
     {
