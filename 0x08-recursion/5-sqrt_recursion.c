@@ -11,19 +11,19 @@
 
 int r_square(int start, int requested_number)
 {
-  int x = start * start, number;
+	int x = start * start, number;
 
- if (x < requested_number)
-   {
-     number = r_square(start + 1, requested_number);
-     return (number);
-   }
- else if (x == requested_number)
-    {
-      return (start);
-    }
- else
-    return (-1);
+	if (x < requested_number)
+	{
+		number = r_square(start + 1, requested_number);
+     		return (number);
+   	}
+ 	else if (x == requested_number)
+    	{
+      	return (start);
+    	}
+ 	else
+    	return (-1);
 }
 
 /**
