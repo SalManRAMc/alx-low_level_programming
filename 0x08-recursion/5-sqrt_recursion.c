@@ -11,7 +11,7 @@
 
 int r_square(int start, int requested_number)
 {
-  int x = start * start, result;
+  int x = start * start;
 
   if (x < requested_number)
     {
