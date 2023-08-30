@@ -1,14 +1,42 @@
 #include "main.h"
 
 /**
- * _sqrt_recursion - Returns square root of natural number.
+ * r_square - determines whether number has square or not
  *
- * @n: Integer
+ * @start: starting number 
+ * @requested_number: number whose square is being determined
  *
- * Return: Square Root
+ * Return: square root
  */
 
-int _sqrt_recursion(int n)
+int r_square(int start, int requested_number)
 {
-	return (squarefinder(n, 1));
+  int x = start * start, result;
+
+  if (x < requested_number)
+    {
+      r_square(start + 1, requested_number);
+      return (start);
+    }
+  else if (x == requested_number)
+    {
+      return (start);
+    }
+  else
+    return (-1);
+}
+
+/**
+ * _sqrt_recursion - wrapper function to determine natural sqrts
+ *
+ * @n: requested number whose square root is to be found
+ *
+ * Return: Square root or -1 on failure
+ */
+
+int _sqrt_recutsion(int n)
+{
+  int x;
+  x = r_square(1, n);
+  return (x);
 }
