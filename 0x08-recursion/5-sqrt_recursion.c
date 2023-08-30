@@ -34,7 +34,7 @@ int r_square(int start, int requested_number)
  * Return: Square root or -1 on failure
  */
 
-int _sqrt_recutsion(int n)
+int _sqrt_recursion(int n)
 {
   int x;
   x = r_square(1, n);
