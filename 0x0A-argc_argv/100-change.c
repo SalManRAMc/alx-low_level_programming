@@ -12,9 +12,6 @@
 
 int main(int argc, char *argv[])
 {
-	int i, remainder = atoi(argv[1]), change = 0;
-	int cents[] = {25, 10, 5 ,2 , 1};
-
 	if (argc != 2)
 	{
 		printf("Error\n");
@@ -22,6 +19,8 @@ int main(int argc, char *argv[])
 	}
 	else
 	{
+		int i, remainder = atoi(argv[1]), change = 0;
+		int cents[5] = {25, 10, 5 ,2 , 1};
 		for (i = 0; i < 5; i++)
 		{
 			if (remainder >= cents[i])
