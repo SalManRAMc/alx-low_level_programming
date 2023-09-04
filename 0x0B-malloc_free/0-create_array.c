@@ -23,8 +23,8 @@ char *create_array(unsigned int size, char c)
     return (NULL);
     else
       {
-	for (; ar < size; ar++)
-	  *ip = c;
+	for (int i; i < size; ar + i)
+	  *ar = c;
 	return (ar);
       }
 }
