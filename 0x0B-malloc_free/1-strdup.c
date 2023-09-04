@@ -26,8 +26,10 @@ char *_strdup(char *str)
   newstrcpy = malloc((_strlen * sizeof(char)) + 1);
 
   if (newstrcpy == NULL)
+    {
     free (newstrcpy);
     return (NULL);
+    }
   else
     {
     do
