@@ -20,7 +20,7 @@ char *_strdup(char *str)
   if (str == NULL)
     return (NULL);
 
-  while (*str++)
+  for (; *str != '\0';  *str++)
     len++;
 
   newstrcpy = malloc((len + 1) * sizeof(char));
@@ -34,7 +34,8 @@ char *_strdup(char *str)
     {
       for (i = 0; i < len; i++)
 	newstrcpy[i] = str[i];
-      newstrcpy[i] = '\0';
+      
+      newstrcpy[i + 1] = '\0';
     }
   return (newstrcpy);
 }
