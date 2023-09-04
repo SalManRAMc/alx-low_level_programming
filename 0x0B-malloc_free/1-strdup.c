@@ -14,7 +14,7 @@
 
 char *_strdup(char *str)
 {
-  int _strlen = 0;
+  int _strlen = 0, i;
   char *newstrcpy;
 
   if (str == NULL)
@@ -31,11 +31,10 @@ char *_strdup(char *str)
     }
   else
     {
-    do
-      {
-	*newstrcpy++ = *str;
-      }while (*str++ != '\0');
-    *newstrcpy++ = '\0';
+      for (i = 0; i <= _strlen; i++)
+	newstrcpy[i] = str[i];
+      
+    *newstrcpy[i + 1] = '\0';
     }
   return (newstrcpy);
 }
