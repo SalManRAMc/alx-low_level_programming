@@ -1,5 +1,5 @@
 #include "main.h"
-#include <stdio.h>
+11;rgb:0000/0000/0000#include <stdio.h>
 #include <stdlib.h>
 
 /**
@@ -32,7 +32,7 @@ char *_strdup(char *str)
     }
   else
     {
-      for (i = 0; i < _strlen; i++)
+      for (i = 0; i < len; i++)
 	newstrcpy[i] = str[i];
       newstrcpy[i] = '\0';
     }
