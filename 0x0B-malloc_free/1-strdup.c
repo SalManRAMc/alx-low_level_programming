@@ -31,10 +31,9 @@ char *_strdup(char *str)
     }
   else
     {
-      for (i = 0; i <= _strlen; i++)
+      for (i = 0; i < _strlen; i++)
 	newstrcpy[i] = str[i];
-      
-    newstrcpy[i + 1] = '\0';
+      newstrcpy[i] = '\0';
     }
   return (newstrcpy);
 }
