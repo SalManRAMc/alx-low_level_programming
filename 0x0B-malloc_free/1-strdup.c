@@ -27,7 +27,6 @@ char *_strdup(char *str)
 
   if (newstrcpy == NULL)
     {
-    free (newstrcpy);
     return (NULL);
     }
   else
@@ -35,7 +34,7 @@ char *_strdup(char *str)
     do
       {
 	*newstrcpy++ = *str++;
-      }while (*str == '\0');
+      }while (*str != '\0');
     *newstrcpy++ = '\0';
     }
   return (newstrcpy);
