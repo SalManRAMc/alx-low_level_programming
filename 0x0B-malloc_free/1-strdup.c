@@ -23,7 +23,7 @@ char *_strdup(char *str)
   while (*str++)
     _strlen++;
 
-  newstrcpy = malloc((_strlen * sizeof(char)) + 1);
+  newstrcpy = malloc((_strlen + 1) * sizeof(char));
 
   if (newstrcpy == NULL)
     {
@@ -33,8 +33,8 @@ char *_strdup(char *str)
     {
     do
       {
-	*newstrcpy++ = *str++;
-      }while (*str != '\0');
+	*newstrcpy++ = *str;
+      }while (*str++ != '\0');
     *newstrcpy++ = '\0';
     }
   return (newstrcpy);
