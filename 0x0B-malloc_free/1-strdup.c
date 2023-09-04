@@ -23,17 +23,17 @@ char *_strdup(char *str)
   for (; *str != '\0'; *str++)
     _strlen++;
 
-  newstrcopy = malloc((_strlen * sizeof(char)) + 1);
+  newstrcpy = malloc((_strlen * sizeof(char)) + 1);
 
-  if (newstrcopy == NULL)
+  if (newstrcpy == NULL)
     return (NULL);
   else
     {
     do
       {
-	*newstrcopy++ = *str++;
+	*newstrcpy++ = *str++;
       }while (*str == '\0');
-  *newstrcopy + 1 = '\0';
+  *newstrcpy + 1 = '\0';
     }
-  return (newstrcopy);
+  return (newstrcpy);
 }
