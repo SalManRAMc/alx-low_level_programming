@@ -14,20 +14,21 @@
 
 char *_strdup(char *str)
 {
-  int _strlen = 0, i;
+  int len = 0, i;
   char *newstrcpy;
 
   if (str == NULL)
     return (NULL);
 
   while (*str++)
-    _strlen++;
+    len++;
 
-  newstrcpy = malloc((_strlen + 1) * sizeof(char));
+  newstrcpy = malloc((len + 1) * sizeof(char));
 
   if (newstrcpy == NULL)
     {
-    return (NULL);
+      printf("Failed to allocate");
+      return (NULL);
     }
   else
     {
