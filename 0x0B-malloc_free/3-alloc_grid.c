@@ -30,7 +30,7 @@ int **alloc_grid(int width, int height)
 		if (mainarr[i] == NULL)
 		{
 			printf("Memory Allocation Failed");
-			free(mainarr);
+			exit(0);
 		}
 	}
 
