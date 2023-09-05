@@ -33,8 +33,8 @@ int **alloc_grid(int width, int height)
                 }
 	}
 
-	for (i = 0; i < width; i++)
-		for (j = 0; j < height; j++)
+	for (i = 0; i < height; i++)
+		for (j = 0; j < width; j++)
 			mainarr[i][j] = 0;
 	return (mainarr);
 }
