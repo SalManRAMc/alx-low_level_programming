@@ -14,16 +14,16 @@
 
 int **alloc_grid(int width, int height)
 {
-	int *mainarr, i, j;
+	int **mainarr, i, j;
 
-	mainarr = malloc(width * sizeof(int));
-	if (mainarr == NULL)
+	*mainarr = malloc(width * sizeof(int));
+	if (*mainarr == NULL)
 		return (NULL);
 
 	for (i = 0; i < height; i++)
 	{
-		mainarr[i] = malloc(height * sizeof(int));
-		if (mainarr[i] == NULL)
+		*mainarr[i] = malloc(height * sizeof(int));
+		if (*mainarr[i] == NULL)
 		{
 			printf("Memory Allocation Failed");
 			return (NULL);
