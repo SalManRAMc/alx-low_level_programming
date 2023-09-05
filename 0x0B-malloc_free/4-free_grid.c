@@ -2,7 +2,7 @@
 
 /**
  * free_grid - frees memory grid
- * 
+ *
  * @grid: the grid
  * @height: row number
  *
