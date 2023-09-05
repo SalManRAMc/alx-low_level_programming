@@ -40,7 +40,7 @@ char *str_concat(char *s1, char *s2)
 			newstring[counter] = s1[counter];
 		for (counter = 0; counter < len2; counter++)
 			newstring[counter + len1] = s2[counter];
-		*newstring++ = '\0';
+		newstring[newlen + 1] = '\0';
 	}
 	return (newstring);
 }
