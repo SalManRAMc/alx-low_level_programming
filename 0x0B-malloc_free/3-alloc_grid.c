@@ -4,10 +4,8 @@
 
 /**
  * **alloc_grid - make a two dimensional array, initialised with zeros
- *
  * @width: number of columns
  * @height: number of rows
- *
  * Return: Null on failure, pointer to grid on success
  */
 
@@ -15,18 +13,16 @@ int **alloc_grid(int width, int height)
 {
 	int **mainarr, i, j;
 
-	if (width <= 0 || height <= 0)
-		return (NULL);
+	mainarr = malloc(width * sizeof(int *));
 
-	mainarr = malloc(width * sizeof(*mainarr));
-	if (mainarr == NULL)
+	if (mainarr == NULL || width <= 0 || height <= 0)
 	{
 		return (NULL);
 	}
 
 	for (i = 0; i < width; i++)
 	{
-		mainarr[i] = malloc(height * sizeof(**mainarr));
+		mainarr[i] = malloc(height * sizeof(int));
 		if (mainarr[i] == NULL)
 		{
 			printf("Memory Allocation Failed");
