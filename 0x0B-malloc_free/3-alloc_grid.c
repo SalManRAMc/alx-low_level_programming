@@ -30,12 +30,12 @@ int **alloc_grid(int width, int height)
 		if (mainarr[i] == NULL)
 		{
 			printf("Memory Allocation Failed");
-                        for (j = 0; j < i; j++)
-                        {
-                                free(mainarr[j]);
-                        }
-                        free(mainarr);
-                        exit(0);
+			for (j = 0; j < i; j++)
+			{
+				free(mainarr[j]);
+			}
+			free(mainarr);
+			exit(0);
                 }
 	}
 
