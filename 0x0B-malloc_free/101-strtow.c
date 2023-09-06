@@ -43,7 +43,7 @@ char **strtow(char *str)
 	int i, j, k, len = 0, wordnumber, counter;
 	char **listofwords;
 	
-	if (str == NULL || str == "")
+	if (str == NULL || str[0] == '\0')
 		return (NULL);
 
 	wordnumber = wordcount(str);
@@ -65,7 +65,7 @@ char **strtow(char *str)
 
 			listofwords[counter] = malloc((len + 1) * sizeof(char));
 
-			for (k = 0;i < j; k++, i++)
+			for (k = 0;i <= j; k++, i++)
 			{
 				listofwords[counter][k] = str[i];
 			}
