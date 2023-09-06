@@ -19,10 +19,12 @@ char *argstostr(int ac, char **av)
 		return (NULL);
 
 	for (i = 0; av[i] != NULL; i++)
+	{
 		for (j = 0; av[i][j] != '\0'; j++)
 			len++;
-
-	bigstring = malloc((len + i + 1) * sizeof(char));
+		len++;
+	}
+	bigstring = malloc((len + 1) * sizeof(char));
 	if (bigstring == NULL)
 	{
 		printf("memory Allocation failed");
