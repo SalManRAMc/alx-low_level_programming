@@ -1,33 +1,33 @@
 #include "main.h"
 
 /**
- * wordcount - counts words in a string
- *
- * @str: string whose words are to be counted
- *
- * return: Number of words
- */
+* wordcount - counts words in a string
+*
+* @str: string whose words are to be counted
+*
+* return: Number of words
+*/
 
 int wordcount(char *sentence)
 {
-        int i, prevchar, wordnumber = 0;
+	int i, prevchar, wordnumber = 0;
 
-        for (i = 0; sentence[i] != '\0'; i++)
-        {
-                if (sentence[i] != ' ')
-                {
-                        if (prevchar == 0)
-                        {
-                                wordnumber++;
-                        }
-                        prevchar = 1;
-                }
-                else
-                {
-                        prevchar = 0;
-                }
-        }
-        return (wordnumber);
+	for (i = 0; sentence[i] != '\0'; i++)
+	{
+		if (sentence[i] != ' ')
+		{
+			if (prevchar == 0)
+			{
+				wordnumber++;
+			}
+			prevchar = 1;
+		}
+		else
+		{
+			prevchar = 0;
+		}
+	}
+	return (wordnumber);
 }
 
 /**
@@ -45,6 +45,9 @@ char **strtow(char *str)
 
 	wordnumber = wordcount(str);
 	listofwords = malloc(wordnumber * sizeof(char *));
+	
+	if (listofwords == NULL)
+		return (NULL);
 
 	/*Create the 2d array*/
 	for (i = 0, counter = 0; str[i] != '\0'; i++)
@@ -58,6 +61,12 @@ char **strtow(char *str)
 			}
 
 			listofwords[counter] = malloc((len + 1) * sizeof(char));
+			if (listofwords[counter] == NULL)
+			{
+				free(listofwords[i]);
+				exit (0);
+				free(listofwords);
+			}
 
 			for (k = 0;i < j; k++, i++)
 			{
