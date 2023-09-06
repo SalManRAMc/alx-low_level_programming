@@ -5,7 +5,7 @@
 *
 * @sentence: string whose words are to be counted
 *
-* return: Number of words
+* Return: Number of words
 */
 
 int wordcount(char *sentence)
@@ -35,7 +35,7 @@ int wordcount(char *sentence)
  *
  * @str: original string to be split
  *
- * return: NULL on failure, pointer to array of words on success
+ * Return: NULL on failure, pointer to array of words on success
  */
 
 char **strtow(char *str)
@@ -76,7 +76,7 @@ char **strtow(char *str)
 				return (NULL);
 			}
 
-			for (k = 0;i <= j; k++, i++)
+			for (k = 0;i < j; k++, i++)
 			{
 				listofwords[counter][k] = str[i];
 			}
