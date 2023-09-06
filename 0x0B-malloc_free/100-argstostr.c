@@ -11,12 +11,12 @@
 
 char *argstostr(int ac, char **av)
 {
-	if (ac == 0 || av == NULL)
-		return (NULL);
-
 	int i, j, len;
 	int strindex = 0;
 	char* bigstring;
+
+	if (ac == 0 || av == NULL)
+		return (NULL);
 
 	for (i = 0; av[i] != NULL; i++)
 		for (j = 0; av[i][j] != '\0'; j++)
