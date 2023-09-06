@@ -1,90 +1,75 @@
 #include "main.h"
 
 /**
-* wordcount - counts words in a string
-*
-* @sentence: string whose words are to be counted
-*
-* Return: Number of words
-*/
-
-int wordcount(char *sentence)
+ * wrdcnt - counts the number of words in a string
+ * @s: string to count
+ *
+ * Return: int of number of words
+ */
+int wrdcnt(char *s)
 {
-	int i, prevchar = 0, wordnumber = 0;
+	int i, n = 0;
 
-	for (i = 0; sentence[i] != '\0'; i++)
+	for (i = 0; s[i]; i++)
 	{
-		if (sentence[i] != ' ')
+		if (s[i] == ' ')
 		{
-			if (prevchar == 0)
-			{
-				wordnumber++;
-			}
-			prevchar = 1;
+			if (s[i + 1] != ' ' && s[i + 1] != '\0')
+				n++;
 		}
-		else
-		{
-			prevchar = 0;
-		}
+		else if (i == 0)
+			n++;
 	}
-	return (wordnumber);
+	n++;
+	return (n);
 }
 
 /**
- * **strtow - seperates a string into an array of words
+ * strtow - splits a string into words
+ * @str: string to split
  *
- * @str: original string to be split
- *
- * Return: NULL on failure, pointer to array of words on success
+ * Return: pointer to an array of strings
  */
-
 char **strtow(char *str)
 {
-	int i, j, k, len = 0, wordnumber, counter;
-	char **listofwords;
-	
-	if (str == NULL || str[0] == '\0')
-		return (NULL);
+	int i, j, k, l, n = 0, wc = 0;
+	char **w;
 
-	wordnumber = wordcount(str);
-	listofwords = malloc(wordnumber * sizeof(char *));
-	
-	if (listofwords == NULL)
+	if (str == NULL || *str == '\0')
 		return (NULL);
-
-	/*Create the 2d array*/
-	for (i = 0, counter = 0; str[i] != '\0'; i++)
+	n = wrdcnt(str);
+	if (n == 1)
+		return (NULL);
+	w = (char **)malloc(n * sizeof(char *));
+	if (w == NULL)
+		return (NULL);
+	w[n - 1] = NULL;
+	i = 0;
+	while (str[i])
 	{
-		if (str[i] != ' ')
+		if (str[i] != ' ' && (i == 0 || str[i - 1] == ' '))
 		{
-
-			for (j = i, len = 0; str[j] != ' ' && str[j] != '\0'; j++)
+			for (j = 1; str[i + j] != ' ' && str[i + j]; j++)
+				;
+			j++;
+			w[wc] = (char *)malloc(j * sizeof(char));
+			j--;
+			if (w[wc] == NULL)
 			{
-				len++;
-			}
-
-			listofwords[counter] = malloc((len + 1) * sizeof(char));
-
-			if (listofwords[counter] == NULL)
-			{
-				/* Free previously allocated memory */
-				for (k = 0; k < counter; k++)
-				{
-					free(listofwords[k]);
-				}
-				free(listofwords);
+				for (k = 0; k < wc; k++)
+					free(w[k]);
+				free(w[n - 1]);
+				free(w);
 				return (NULL);
 			}
-
-			for (k = 0; i < j; k++, i++)
-			{
-				listofwords[counter][k] = str[i];
-			}
-
-			listofwords[counter][k] = '\0';
-
-			counter++;
+			for (l = 0; l < j; l++)
+				w[wc][l] = str[i + l];
+			w[wc][l] = '\0';
+			wc++;
+			i += j;
 		}
+		else
+			i++;
 	}
-	return (listofwords);
+	return (w);
 }
