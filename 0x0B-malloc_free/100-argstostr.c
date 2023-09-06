@@ -13,7 +13,7 @@ char *argstostr(int ac, char **av)
 {
 	int i, j, len = 0;
 	int strindex = 0;
-	char* bigstring;
+	char *bigstring;
 
 	if (ac == 0 || av == NULL)
 		return (NULL);
@@ -22,7 +22,7 @@ char *argstostr(int ac, char **av)
 		for (j = 0; av[i][j] != '\0'; j++)
 			len++;
 
-	bigstring = malloc((len + 1) * sizeof(char));
+	bigstring = malloc((len + i + 1) * sizeof(char));
 	if (bigstring == NULL)
 	{
 		printf("memory Allocation failed");
