@@ -65,6 +65,17 @@ char **strtow(char *str)
 
 			listofwords[counter] = malloc((len + 1) * sizeof(char));
 
+			if (listofwords[counter] == NULL)
+			{
+				/* Free previously allocated memory */
+				for (k = 0; k < counter; k++)
+				{
+					free(listofwords[k]);
+				}
+				free(listofwords);
+				return (NULL);
+			}
+
 			for (k = 0;i <= j; k++, i++)
 			{
 				listofwords[counter][k] = str[i];
