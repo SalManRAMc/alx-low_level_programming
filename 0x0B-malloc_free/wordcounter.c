@@ -10,7 +10,7 @@
 
 int wordcount(char *sentence)
 {
-	int i, prevchar, wordcount = 0;
+	int i, prevchar, wordnumber = 0;
 
 	for (i = 0; sentence[i] != '\0'; i++)
 	{
@@ -18,7 +18,7 @@ int wordcount(char *sentence)
 		{
 			if (prevchar == 0)
 			{
-				wordcount++;
+				wordnumber++;
 			}
 			prevchar = 1
 		}
@@ -27,5 +27,5 @@ int wordcount(char *sentence)
 			prevchar = 0;
 		}
 	}
-	return (wordcount);
+	return (wordnumber);
 }
