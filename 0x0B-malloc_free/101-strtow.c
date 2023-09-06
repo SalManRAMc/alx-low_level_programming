@@ -39,5 +39,5 @@ char **strtow(char *str)
 			counter++;
 		}
 	}
-
+	return (listofwords);
 }
