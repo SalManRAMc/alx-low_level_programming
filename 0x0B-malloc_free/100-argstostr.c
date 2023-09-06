@@ -14,7 +14,8 @@ char *argstostr(int ac, char **av)
 	if (ac == 0 || av == NULL)
 		return (NULL);
 
-	int i, j, len, strindex = 0;
+	int i, j, len;
+	int strindex = 0;
 	char* bigstring;
 
 	for (i = 0; av[i] != NULL; i++)
@@ -35,7 +36,7 @@ char *argstostr(int ac, char **av)
 			strindex += 1;
 			bigstring[strindex] = av[i][j];
 		}
-		stringindex += 1;
+		strindex += 1;
 		bigstring[strindex] = '\n';
 	}
 	bigstring[strindex + 1] = '\0';
