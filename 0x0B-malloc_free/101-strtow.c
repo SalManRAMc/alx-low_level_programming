@@ -14,7 +14,7 @@ char **strtow(char *str)
 	char **listofwords;
 
 	wordnumber = wordcount(str);
-	listofwords = malloc(wordcount * sizeof(char *));
+	listofwords = malloc(wordnumber * sizeof(char *));
 
 	/*Create the 2d array*/
 	for (i = 0, counter = 0; str[i] != '\0'; i++)
