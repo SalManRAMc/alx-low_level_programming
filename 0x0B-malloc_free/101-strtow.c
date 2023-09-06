@@ -10,7 +10,7 @@
 
 int wordcount(char *sentence)
 {
-	int i, prevchar, wordnumber = 0;
+	int i, prevchar = 0, wordnumber = 0;
 
 	for (i = 0; sentence[i] != '\0'; i++)
 	{
@@ -76,7 +76,7 @@ char **strtow(char *str)
 				return (NULL);
 			}
 
-			for (k = 0;i < j; k++, i++)
+			for (k = 0; i < j; k++, i++)
 			{
 				listofwords[counter][k] = str[i];
 			}
