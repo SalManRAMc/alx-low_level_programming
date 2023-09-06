@@ -20,7 +20,7 @@ int wordcount(char *sentence)
 			{
 				wordnumber++;
 			}
-			prevchar = 1
+			prevchar = 1;
 		}
 		else
 		{
