@@ -19,4 +19,10 @@ void free_grid(int **grid, int height);
 char *argstostr(int ac, char **av);
 /*Takes in number of arguments passed and creates one big string out of them*/
 
+int wordcount(char *sentence);
+/* Counts words in a string */
+
+char **strtow(char *str);
+/* converts a long string into an array of words (an array of strings)*/
+
 #endif
