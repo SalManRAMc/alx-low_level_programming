@@ -1,0 +1,5 @@
+alias pp='git push'
+alias com='git commit -m'
+alias ad='git add .'
+alias dfp='chmod u+x'
+alias runc='gcc -Wall -Werror -Wextra -pedantic -std=gnu89'
