@@ -42,6 +42,9 @@ char **strtow(char *str)
 {
 	int i, j, k, len = 0, wordnumber, counter;
 	char **listofwords;
+	
+	if (str == NULL || str == "")
+		return (NULL);
 
 	wordnumber = wordcount(str);
 	listofwords = malloc(wordnumber * sizeof(char *));
