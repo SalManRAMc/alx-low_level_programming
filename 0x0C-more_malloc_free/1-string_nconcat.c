@@ -1,7 +1,6 @@
 #include "main.h"
 
-/**
- * string_nconcat - concatenate two strings
+/** string_nconcat - concatenate two strings
  *
  * @s1: string 1
  * @s2: string 2
@@ -12,33 +11,39 @@
 
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
-	unsigned int len1 = 0, len2 = 0, i, j, len3 = 0;
-	char *s3;
+	unsigned int len1 = 0, len2 = 0, i = 0, j = 0, k = 0, len3 = 0;
+        char *s3;
 
-	if (s1 == NULL)
-		s1 = '\0';
-	if (s2 == NULL)
-		s2 = '\0';
+        if (s1 == NULL)
+                s1 = "";
+        if (s2 == NULL)
+                s2 = "";
 
-	while (*s1++ != '\0')
+        for (i = 0; s1[i] != '\0'; i++)
 		len1++;
-	while (*s2++ != '\0')
-		len2++;
-	
-	if (n >= len2)
-		n = len2;
-	len3 = len1 + len2;
+        for (i = 0; s2[i] != '\0'; i++)
+                len2++;
 
-	s3 = malloc((len3 + 1) * sizeof(char));
-	if (s3 == NULL)
-		return (NULL);
-	else
-	{
-		for (i = 0; i < len1; i++)
-			s3[i] = s1[i];
-		for (i = i, j = 0; j < n; j++)
-			s3[i + j] = s2[j];
+        if (n >= len2)
+                n = len2;
+        len3 = len1 + n + 1;
+
+        s3 = malloc(len3 * sizeof(char));
+        if (s3 == NULL)
+                return (NULL);
+        else
+        {
+                while (j < len1)
+		{
+			s3[j] = s1[j];
+			j++;
+		}
+                while (k < n)
+		{
+			s3[j + k] = s2[k];
+			k++;
+		}
 	}
-	s3[i + j] = '\0';
-	return (s3);
+        s3[j + k] = '\0';
+        return (s3);
 }
