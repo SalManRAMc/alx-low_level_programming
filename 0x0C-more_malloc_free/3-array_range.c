@@ -11,4 +11,23 @@
 
 int *array_range(int min, int max)
 {
+	int *ar, size, i = 0, nmemb = 0;
 
+	if (min > max)
+		return (NULL);
+
+	size = sizeof(int);
+
+	for (i = min; i <= max; i++)
+		nmemb++;
+
+	ar = malloc (size * nmemb);
+	if (ar == NULL)
+		return (NULL);
+
+	for (i = 0; i < nmemb; i++)
+	{
+		ar[i] = min + i;
+	}
+	return (ar);
+}
