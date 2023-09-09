@@ -21,7 +21,7 @@ int *array_range(int min, int max)
 	for (i = min; i <= max; i++)
 		nmemb++;
 
-	ar = malloc (size * nmemb);
+	ar = malloc(size * nmemb);
 	if (ar == NULL)
 		return (NULL);
 
