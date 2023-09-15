@@ -1,7 +1,7 @@
 #include "function_pointers.h"
 
 /**
- * array_iterator - calls upon a function that goes through an array 
+ * array_iterator - calls upon a function that goes through an array
  *
  * @array: array of ints being used
  * @size: size of array
