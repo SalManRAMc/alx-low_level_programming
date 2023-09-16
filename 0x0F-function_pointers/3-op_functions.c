@@ -1,19 +1,5 @@
 #include "3-calc.h"
 
-#include <unistd.h>
-
-/**
- * _putchar - writes the character c to stdout
- *@c: The character to print
- *
- *Return: On success 1.
- *On error, -1 is returned, and errno is set appropriately.
- */
-int _putchar(char c)
-{
-		return (write(1, &c, 1));
-}
-
 /**
  * op_add - adds two ints
  *
@@ -69,7 +55,7 @@ int op_div(int a, int b)
 {
 	if (b == 0)
 	{
-		_putchar('\n');
+		printf('\n');
 		exit(100);
 	}
 	return (a / b);
@@ -88,7 +74,7 @@ int op_mod(int a, int b)
 {
 	if (b == 0)
 	{
-		_putchar('\n');
+		printf('\n');
 		exit(100);
 	}
 	return (a % b);
