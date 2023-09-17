@@ -8,7 +8,7 @@
 
 void printchar(va_list letter)
 {
-	char c = va_arg(letter, char);
+	char c = va_arg(letter, int);
 	printf("%c",c);
 }
 
@@ -32,7 +32,7 @@ void printdecimal(va_list num)
 
 void printfloat(va_list numf)
 {
-	float f = va_arg(numf, float);
+	float f = va_arg(numf, double);
 	printf("%f", f);
 }
 
