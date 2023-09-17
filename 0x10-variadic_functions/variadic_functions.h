@@ -12,8 +12,8 @@
  */
 typedef struct format
 {
-	char *token;
-	void (*f)(char *, va_list);
+	char token;
+	void (*funcall)(va_list);
 } formtoken;
 
 int sum_them_all(const unsigned int n, ...);
