@@ -9,6 +9,7 @@
 void printchar(va_list letter)
 {
 	char c = va_arg(letter, int);
+
 	printf("%c", c);
 }
 
@@ -21,6 +22,7 @@ void printchar(va_list letter)
 void printdecimal(va_list num)
 {
 	int i = va_arg(num, int);
+
 	printf("%d", i);
 }
 
@@ -33,6 +35,7 @@ void printdecimal(va_list num)
 void printfloat(va_list numf)
 {
 	float f = va_arg(numf, double);
+
 	printf("%f", f);
 }
 
@@ -62,11 +65,11 @@ void printstring(va_list string)
 void print_all(const char * const format, ...)
 {
 	formtoken f[] = {
-		{'c',printchar},
-		{'i',printdecimal},
-		{'f',printfloat},
-		{'s',printstring},
-		{'\0',NULL}	
+		{'c', printchar},
+		{'i', printdecimal},
+		{'f', printfloat},
+		{'s', printstring},
+		{'\0', NULL}
 	};
 	va_list params;
 	void (*summonprint)(va_list);
