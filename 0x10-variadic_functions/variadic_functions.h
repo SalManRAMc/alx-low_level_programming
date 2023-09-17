@@ -5,16 +5,16 @@
 #include <stdarg.h>
 
 /**
- * struct token - Struct token
+ * struct format - Struct format
  *
  * @token: format token
  * @f: the function associated
  */
-typedef struct token
+typedef struct format
 {
 	char *token;
 	void (*f)(char *, va_list);
-} token_t;
+} formtoken;
 
 int sum_them_all(const unsigned int n, ...);
 void print_numbers(const char *separator, const unsigned int n, ...);
