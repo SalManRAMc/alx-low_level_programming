@@ -9,7 +9,7 @@
 void printchar(va_list letter)
 {
 	char c = va_arg(letter, int);
-	printf("%c",c);
+	printf("%c", c);
 }
 
 /**
@@ -72,6 +72,8 @@ void print_all(const char * const format, ...)
 	void (*summonprint)(va_list);
 	int i = 0, j = 0;
 
+	va_start(params, format);
+
 	while (format[i] != '\0')
 	{
 		while (f[j].token != '\0')
@@ -83,8 +85,10 @@ void print_all(const char * const format, ...)
 			}
 			j++;
 		}
+		j = 0;
 		i++;
 	}
+
 	va_end(params);
 	printf("\n");
 }
