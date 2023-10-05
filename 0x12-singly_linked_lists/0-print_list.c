@@ -1,7 +1,6 @@
 #include "lists.h"
 
 /**
- *
  * print_list - prints all elements of a list
  *
  * @h: header of list
@@ -18,7 +17,7 @@ size_t print_list(const list_t *h)
 
 	while (header != NULL)
 	{
-		if(header->str == NULL)
+		if (header->str == NULL)
 		{
 			header->str = "(nil)";
 			header->len = 0;
@@ -27,5 +26,5 @@ size_t print_list(const list_t *h)
 		header = header->next;
 		elementnumber++;
 	}
-	return(elementnumber);
+	return (elementnumber);
 }
