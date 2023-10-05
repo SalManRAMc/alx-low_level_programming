@@ -10,7 +10,7 @@
 
 size_t list_len(const list_t *h)
 {
-	size_t nodenumber;
+	size_t nodenumber = 0;
 	list_t *header;
 
 	header = (list_t *)h;
