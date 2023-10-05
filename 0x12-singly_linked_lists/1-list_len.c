@@ -15,8 +15,10 @@ size_t list_len(const list_t *h)
 
 	header = (list_t *)h;
 
-	while (header->next != NULL)
+	while (header != NULL)
+	{
 		nodenumber++;
-
+		header = header->next;
+	}
 	return (nodenumber);
 }
