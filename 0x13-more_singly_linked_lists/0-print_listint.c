@@ -5,7 +5,7 @@
  *
  * @h: head node
  *
- * Return no of nodes on success, 0 on failure
+ * Return: no of nodes on success, 0 on failure
  *
  */
 
