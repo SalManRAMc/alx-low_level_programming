@@ -1,13 +1,11 @@
 #include "lists.h"
 
 /**
-*
 * listint_len - returns the number nodes in a list
 *
 * @h: header node
 *
 * Return: Number of Nodes available
-*
 */
 
 size_t listint_len(const listint_t *h)
