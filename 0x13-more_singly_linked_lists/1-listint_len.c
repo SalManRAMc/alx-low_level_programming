@@ -10,15 +10,15 @@
 
 size_t listint_len(const listint_t *h)
 {
-	int length = 1;
+	size_t length = 0;
 	const listint_t *navigator;
 
 	if (h == NULL) /*checks if the head pointer points to NULL*/
-		return (1);
+		return (0);
 
 	navigator = h; /*give navigator ptr address of first node*/
 
-	while (navigator->next != NULL)
+	while (navigator != NULL)
 	{
 		length++;
 		navigator = navigator->next;
