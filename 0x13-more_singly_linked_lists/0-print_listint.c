@@ -21,7 +21,7 @@ size_t print_listint(const listint_t *h)
 
 	while (navigator != NULL)
 	{
-		printf("%d\n", navigator->int);
+		printf("%d\n", navigator->n);
 		count++;
 		navigator = navigator->next;
 		/*print node data then move to next*/
