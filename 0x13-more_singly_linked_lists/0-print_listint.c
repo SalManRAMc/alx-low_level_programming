@@ -1,11 +1,11 @@
 #include "lists.h"
 
 /**
- * print_listint - prints all elements of a list of typr int
+ * print_listint - prints all elements of a list of containing int
  *
  * @h: head node
  *
- * Return: no of nodes on success, 0 on failure
+ * Return: no of nodes on success, 0 if there aren't any
  *
  */
 
