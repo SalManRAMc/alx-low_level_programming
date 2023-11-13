@@ -20,7 +20,7 @@ size_t print_listint(const listint_t *h)
 
 	if (navigator != NULL)
 	{
-		print("%d", navigator->int);
+		print("%d\n", navigator->int);
 		navigator = navigator->next;
 		/*print node data then move to next*/
 	}
