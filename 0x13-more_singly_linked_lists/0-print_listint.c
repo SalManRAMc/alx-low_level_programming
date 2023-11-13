@@ -12,7 +12,7 @@
 size_t print_listint(const listint_t *h)
 {
 	const listint_t *navigator; /*pointer to navigate through list*/
-	int count = 0
+	int count = 0;
 
 	if (h == NULL) /*if list is empty, return fail value*/
 		return (0);
