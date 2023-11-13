@@ -1,25 +1,24 @@
 #include "lists.h"
 
 /**
-* free_list - frees all nodes of a list
-*
-* @head: pointer to head node
-*
-* Function return type is void and will therefore return nothing
-*/
-
+ *  * free_list - frees all nodes of a list
+ *   * @head: pointer to head node
+ *    *
+ *     * Return: void
+ *      */
 void free_list(list_t *head)
 {
-	list_t *tempnode;
+	list_t *node, *next_node;
 
 	if (!head)
 		return;
 
-	while (head != NULL)
+	node = head;
+	while (node)
 	{
-		tempnode = head->next;
-		free(head->str); /* store next node before freeing current one */
-		free(head);
-		head = tempnode; /* move to next node */
-	}
+			next_node = node->next;
+			free(node->str);
+			free(node);
+			node = next_node;
+		}
 }
