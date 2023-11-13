@@ -3,26 +3,27 @@
 /**
  * print_listint - prints all elements of a list of typr int
  *
- * @h: head node 
+ * @h: head node
  *
- * Return 1 on success, -1 on failure
+ * Return no of nodes on success, 0 on failure
  *
  */
 
 size_t print_listint(const listint_t *h)
 {
-	listint_t *navigator; /*pointer to navigate through list*/
-
+	const listint_t *navigator; /*pointer to navigate through list*/
+	int count = 0
 	if (h == NULL) /*if list is empty, return fail value*/
-		return -1;
+		return (0);
 
 	navigator = h; /*points to head node*/
 
 	if (navigator != NULL)
 	{
-		print("%d\n", navigator->int);
+		printf("%d\n", navigator->int);
+		count++;
 		navigator = navigator->next;
 		/*print node data then move to next*/
 	}
-	return 1;
+	return (count);
 }
