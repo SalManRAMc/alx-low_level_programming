@@ -13,12 +13,13 @@ size_t print_listint(const listint_t *h)
 {
 	const listint_t *navigator; /*pointer to navigate through list*/
 	int count = 0
+
 	if (h == NULL) /*if list is empty, return fail value*/
 		return (0);
 
 	navigator = h; /*points to head node*/
 
-	if (navigator != NULL)
+	while (navigator != NULL)
 	{
 		printf("%d\n", navigator->int);
 		count++;
