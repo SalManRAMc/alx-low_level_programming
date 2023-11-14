@@ -1,7 +1,6 @@
-#include "lists.h" 
+#include "lists.h"
 
 /**
-*
 * add_nodeint - add node to list (in place of head)
 *
 * @head: head node
@@ -14,13 +13,14 @@ listint_t *add_nodeint(listint_t **head, const int n)
 {
 	listint_t *new_node; /*initialise navigator node */
 
-	if (navigator == NULL)
-		return (-1);
+	if (head == NULL)
+		return (NULL);
 
-	newnode = (listint_t *)malloc(sizeof(listint_t));
-	newnode->next = head->next;
-	newnode->n = n;
-	head->next = newnode;
+	new_node = (listint_t *)malloc(sizeof(listint_t));
 
-	return (&newnode);
+	new_node->n = n;
+	new_node->next = *head; /*dereferenced in order to get actual head*/
+	*head = new_node; 
+
+	return (new_node); /*return new_node*/
 }
