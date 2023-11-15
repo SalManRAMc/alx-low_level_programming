@@ -1,7 +1,7 @@
-#include "lists.h" 
+#include "lists.h"
 
 /**
- * free_listint - frees list 
+ * free_listint - frees list
  *
  * @head: head node
  *
@@ -18,11 +18,10 @@ void free_listint(listint_t *head)
 
 	navigator = head;
 
-	while(navigator != NULL)
+	while (navigator != NULL)
 	{
 		temporarynode = navigator->next;
 		free(navigator);
 		navigator = temporarynode;
 	}
-	return;
 }
