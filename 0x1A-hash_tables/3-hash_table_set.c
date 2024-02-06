@@ -12,29 +12,33 @@
 
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
-	int index;
-	hash_node_t *newhnode;
-	unsigned long int hash;
+	hash_node_t *current;
+	unsigned long int accessindex, i;
 
-	newhnode->key = key;
-	newhnode->value = value;
-	newhnode->next = NULL;
-	hash = hash_djb2(key);
+	if(ht == NULL || key == NULL || value == NULL || ht->size == 0 
+			|| strlen(key) == 0)
+		return (0);
 
-	for (index = 0; ht->array[index] != NULL; index++)
-
-		if (ht->array[index]->key == newhashnode->key)
+	accessindex = key_index(key, ht->size);
+	for(i = 0; i < size; i++)
+	{
+		if (i == accessindex)
 		{
-			if (ht->array[index] == NULL)
+			current = ht->array[i];
+			while (current != NULL)
 			{
-				ht->array[index] = newhashnode;
-				return (1);
+				if (strcmp(current->key, key) == 0)
+				{
+					current->value = value; /*Update value if already exists*/
+					return (1);
+				}
+				else
+					current = current->next;
 			}
-			else
-			{
-				ht->array[index]->next = newhashnode;
-			}
+			current = create_hnode(key, value);
+			current->next = ht->array[i];
+			ht->array[i] = current->next;
 		}
 	}
-	return (0);
+
 }
