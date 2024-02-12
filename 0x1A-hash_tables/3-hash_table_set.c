@@ -1,5 +1,4 @@
 #include "hash_tables.h"
-
 /**
  * hash_table_set - adds an element to hash table
  *
@@ -9,7 +8,6 @@
  *
  * Return: 1 on success, 0 on failure
  */
-
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
 	hash_node_t *current;
@@ -19,7 +17,6 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	if (ht == NULL || key == NULL || value == NULL || ht->size == 0
 			|| strlen(key) == 0)
 		return (0);
-
 	accessindex = key_index((const unsigned char *)key, ht->size);
 	for (i = 0; i < ht->size; i++)
 	{
@@ -31,14 +28,21 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 				if (strcmp(current->key, key) == 0)
 				{
 					newvalue = strdup(value); /*Update value if already exists*/
-					free(current->value);
-					current->value = newvalue;
-					return (1);
+					if (newvalue != NULL)
+					{
+						free(current->value);
+						current->value = newvalue;
+						return (1);
+					}
+					else
+					{
+						free(newvalue);
+						return (0);
+					}
 				}
 				else
 					current = current->next;
-			}
-			/*make new node and assign it to head of table*/
+			} /*make new node and assign it to head of table*/
 			current = create_hnode(key, value);
 			current->next = ht->array[i];
 			ht->array[i] = current;
