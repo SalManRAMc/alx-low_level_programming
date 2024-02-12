@@ -31,11 +31,6 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 				if (strcmp(current->key, key) == 0)
 				{
 					newvalue = strdup(value); /*Update value if already exists*/
-
-					if (newvalue == NULL)
-					{
-						return (0);
-					}
 					free(current->value);
 					current->value = newvalue;
 					return (1);
@@ -43,9 +38,10 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 				else
 					current = current->next;
 			}
+			/*make new node and assign it to head of table*/
 			current = create_hnode(key, value);
 			current->next = ht->array[i];
-			ht->array[i] = current->next;
+			ht->array[i] = current;
 			return (1);
 		}
 	}
