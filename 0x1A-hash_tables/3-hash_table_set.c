@@ -10,7 +10,7 @@
  */
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
-	hash_node_t *current;
+	hash_node_t *navigator, *new_node;
 	unsigned long int accessindex, i;
 	char *newvalue;
 
@@ -22,16 +22,16 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	{
 		if (i == accessindex)
 		{
-			current = ht->array[i];
-			while (current != NULL)
+			navigator = ht->array[i];
+			while (navigator != NULL)
 			{
-				if (strcmp(current->key, key) == 0)
+				if (strcmp(navigator->key, key) == 0)
 				{
 					newvalue = strdup(value); /*Update value if already exists*/
 					if (newvalue != NULL)
 					{
-						free(current->value);
-						current->value = newvalue;
+						free(navigator->value);
+						navigator->value = newvalue;
 						return (1);
 					}
 					else
@@ -41,13 +41,12 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 					}
 				}
 				else
-					current = current->next;
+					navigator = navigator->next;
 			} /*make new node and assign it to head of table*/
-			current = create_hnode(key, value);
-			current->next = ht->array[i];
-			ht->array[i] = current;
+			new_node = create_hnode(key, value);
+			new_node->next = ht->array[i];
+			ht->array[i] = new_node;
 			return (1);
 		}
-	}
 	return (0);
 }
