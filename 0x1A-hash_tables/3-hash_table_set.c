@@ -14,12 +14,13 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
 	hash_node_t *current;
 	unsigned long int accessindex, i;
+	char *newvalue;
 
 	if (ht == NULL || key == NULL || value == NULL || ht->size == 0
 			|| strlen(key) == 0)
 		return (0);
 
-	accessindex = key_index(key, ht->size);
+	accessindex = key_index((const unsigned char *)key, ht->size);
 	for (i = 0; i < ht->size; i++)
 	{
 		if (i == accessindex)
@@ -29,7 +30,14 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 			{
 				if (strcmp(current->key, key) == 0)
 				{
-					current->value = value; /*Update value if already exists*/
+					newvalue = strdup(value); /*Update value if already exists*/
+
+					if (newvalue == NULL)
+					{
+						return (0);
+					}
+					free(current->value);
+					current->value = newvalue;
 					return (1);
 				}
 				else
